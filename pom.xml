@@ -160,7 +160,7 @@
 				<configuration>
 					<unpackBundle>true</unpackBundle>
 					<instructions>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Name>${project.name}</Bundle-Name>
 						<Bundle-Vendor>Eclipse</Bundle-Vendor>
 						<Build-By>Eclipse</Build-By>
