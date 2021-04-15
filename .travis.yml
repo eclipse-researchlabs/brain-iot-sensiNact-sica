@@ -11,11 +11,17 @@ env:
 cache:
     directories:
      - .m2/repository
-     
+
+install:
+  - mvn $MAVEN_CLI_OPTS validate
+
+script:
+  - mvn $MAVEN_CLI_OPTS verify
+          
 deploy:
   provider: script
   script: 
-    - mvn $MAVEN_CLI_OPTS $MAVEN_DEPLOY_OPTS validate verify clean package org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy
+    - mvn $MAVEN_CLI_OPTS $MAVEN_DEPLOY_OPTS clean package org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy
   on:
     branch: main
 
